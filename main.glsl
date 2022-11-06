@@ -116,11 +116,9 @@ void main () {  // display pool ball
     vec3 light_source = vec3(mouse.xy*6.0,4.0);
     vec2 st = (gl_FragCoord.xy/u_resolution);
 
-    vec4 background = vec4(0.349, 0.7333, 0.9137, 1.0);
+    vec4 background = vec4(0.0, 0.0, 0.0, 1.0);
 
     pool_ball balls[15];
-
-
     balls[0] = pool_ball(
             vec3(0.2549, 0.0941, 0.0),
             vec2(0.5),
@@ -157,6 +155,6 @@ void main () {  // display pool ball
         }
     }
 
-    gl_FragColor = vec4(blend_rgba(color, background * get_light(vec3(0.0, 0.0, -6.0), light_source)));
+    gl_FragColor = vec4(blend_rgba(color, background ));
 
 }
